@@ -65,51 +65,41 @@
     /* ── Profile ── */
     .profile-block {
       display: flex;
-      gap: 2rem;
-      align-items: flex-start;
-      margin-bottom: 2rem;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      padding-top: 1rem;
     }
 
-    .profile-placeholder {
+    .profile-photo {
       width: 150px;
-      min-width: 150px;
-      height: 200px;
+      height: 150px;
+      border-radius: 50%;
       background: #fff4ec;
-      border: 1px solid #ffd4a8;
+      border: 3px solid #FF8200;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #aaa;
-      font-size: 0.78rem;
-      text-align: center;
-      padding: 1rem;
+      margin-bottom: 1rem;
     }
 
-    .profile-placeholder img {
-      width: 150px;
-      min-width: 150px;
-      height: 200px;
+    .profile-photo img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
+    }
+
+    .profile-photo svg {
+      opacity: 0.35;
     }
 
     .profile-text h1 {
       font-size: 1.75rem;
       font-weight: 600;
       color: #111;
-      margin-bottom: 0.2rem;
       line-height: 1.25;
-    }
-
-    .citizenship {
-      font-size: 0.875rem;
-      color: #666;
-      margin-bottom: 0.85rem;
-    }
-
-    .profile-text p {
-      font-size: 0.975rem;
-      color: #333;
-      line-height: 1.75;
     }
 
     /* ── Sections ── */
@@ -132,6 +122,8 @@
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
+
+    h3.accent { color: #FF8200; }
 
     /* ── Entry rows ── */
     .entry {
@@ -261,7 +253,8 @@
       <a href="#education">Education</a>
       <a href="#research">Research</a>
       <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
+      <a href="#fellowships">Fellowships</a>
+      <a href="#presentations">Presentations</a>
     </nav>
   </div>
 </header>
@@ -270,20 +263,16 @@
 
   <!-- Profile -->
   <div class="profile-block">
-    <div class="profile-placeholder">Photo<br>(profile.jpg)</div>
+    <div class="profile-photo">
+      <!-- 사진 있으면: <img src="profile.jpg" alt="Sehoon Kim"> -->
+      <svg width="64" height="64" fill="none" stroke="#FF8200" stroke-width="1.5" viewBox="0 0 24 24">
+        <circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+      </svg>
+    </div>
     <div class="profile-text">
       <h1>Sehoon Kim (김세훈)</h1>
-      <p class="citizenship">Citizenship: Republic of Korea</p>
-      <p>
-        I am an incoming Ph.D. student in Economics at the
-        <a href="https://haslam.utk.edu/economics/" target="_blank">University of Tennessee, Knoxville</a>.
-        My research interests are in applied microeconomics, with a focus on labor economics and
-        environmental economics. I study how carbon pricing and emissions trading schemes affect
-        firm behavior and regional labor markets, and examine selective ESG disclosure practices
-        among Korean listed firms. Before joining UTK, I completed an M.A. in Economics at
-        Sogang University and served as a teaching assistant and research assistant at
-        KDI School and Seoul National University.
-      </p>
+      <p style="margin-top:0.5rem; font-size:0.85rem; color:#777;">Environmental Economics · Labor Economics · Applied Microeconomics</p>
+      <p style="margin-top:0.35rem; font-size:0.9rem;"><a href="mailto:sehoon@utk.edu">sehoon@utk.edu</a></p>
     </div>
   </div>
 
@@ -295,7 +284,7 @@
       <span class="entry-date">2026 –</span>
       <div class="entry-body">
         <strong>University of Tennessee, Knoxville</strong>
-        <span>Ph.D. in Economics · Knoxville, TN, USA</span>
+        <span>Ph.D. Student in Economics · Knoxville, TN, USA</span>
       </div>
     </div>
 
@@ -303,7 +292,7 @@
       <span class="entry-date">2022</span>
       <div class="entry-body">
         <strong>Sogang University</strong>
-        <span>M.A. in Economics · Seoul, South Korea</span>
+        <span>M.A. in Economics, South Korea</span>
       </div>
     </div>
 
@@ -311,7 +300,7 @@
       <span class="entry-date">2020</span>
       <div class="entry-body">
         <strong>Yonsei University, MIRAE</strong>
-        <span>B.A. in Economics · Wonju, South Korea</span>
+        <span>B.A. in Economics, South Korea</span>
       </div>
     </div>
   </section>
@@ -320,37 +309,8 @@
   <section id="research">
     <h2>Research</h2>
 
-    <!-- Publications -->
-    <h3>Peer-Reviewed Publications</h3>
-
-    <div class="paper">
-      <span class="paper-title">Work-from-Home in Korea: Expansion, Persistence, and Inequality</span><br>
-      <span class="paper-authors">with Changkeun Lee, Jiye Kang, Haeun Kim, Soomin Lim, Hyuk An, Jisu Jung, Seolyeon Moon</span><br>
-      <span class="paper-venue">Journal of the Korean Official Statistics, 30(4), pp 89–114, 2025</span><br>
-      <a href="https://doi.org/10.22886/jkos.2025.30.4.89" target="_blank" style="font-size:0.83rem;">doi:10.22886/jkos.2025.30.4.89</a>
-    </div>
-
-    <div class="paper">
-      <span class="paper-title">Does Total Factor Productivity Growth Reduce Energy Intensity? <em>(in Korean)</em></span><br>
-      <span class="paper-authors">with Changkeun Lee</span><br>
-      <span class="paper-venue">Korean Energy Economic Review, 24(1), pp 29–49, 2025</span><br>
-      <a href="https://doi.org/10.22794/keer.2025.24.1.002" target="_blank" style="font-size:0.83rem;">doi:10.22794/keer.2025.24.1.002</a>
-    </div>
-
-    <div class="paper">
-      <span class="paper-title">Analysis of Heterogeneous Changes in Travel Patterns by Special-Purpose Area in the COVID-19 Pandemic <em>(in Korean)</em></span><br>
-      <span class="paper-venue">Journal of Transport Research, 31(2), pp 19–31, 2024</span><br>
-      <a href="https://doi.org/10.34143/jtr.2024.31.2.19" target="_blank" style="font-size:0.83rem;">doi:10.34143/jtr.2024.31.2.19</a>
-    </div>
-
-    <div class="paper">
-      <span class="paper-title">The Effects of New Expressways on Local Economy <em>(in Korean)</em></span><br>
-      <span class="paper-venue">Journal of Korean Society of Transportation, 41(1), pp 68–80, 2023</span><br>
-      <a href="https://doi.org/10.7470/jkst.2023.41.1.068" target="_blank" style="font-size:0.83rem;">doi:10.7470/jkst.2023.41.1.068</a>
-    </div>
-
     <!-- Working Papers -->
-    <h3>Working Papers</h3>
+    <h3 class="accent">Working Papers</h3>
 
     <div class="paper">
       <span class="paper-title">
@@ -358,7 +318,7 @@
         <span class="paper-badge">submitted</span>
       </span><br>
       <span class="paper-authors">with Yeong Jae Kim, Jinseong Park, Changkeun Lee, Sun Joo Park</span><br>
-      <a href="http://dx.doi.org/10.2139/ssrn.5195619" target="_blank" style="font-size:0.83rem;">SSRN 5195619</a>
+      <a href="http://dx.doi.org/10.2139/ssrn.5195619" target="_blank" style="font-size:0.83rem;">doi:10.2139/ssrn.5195619</a>
     </div>
 
     <div class="paper">
@@ -393,7 +353,7 @@
     </div>
 
     <!-- Work in Progress -->
-    <h3>Work in Progress</h3>
+    <h3 class="accent">Work in Progress</h3>
 
     <div class="paper">
       <span class="paper-title">Firm-Establishment Matched Carbon Emissions Data in South Korea from 2013 to 2024</span><br>
@@ -419,14 +379,44 @@
       <span class="paper-title">Does Technical Agility Reduce Technostress?</span><br>
       <span class="paper-authors">with Changkeun Lee, Yongmi</span>
     </div>
+
+    <!-- Publications -->
+    <h3 class="accent">Peer-Reviewed Publications</h3>
+
+    <div class="paper">
+      <span class="paper-title">Work-from-Home in Korea: Expansion, Persistence, and Inequality</span><br>
+      <span class="paper-authors">with Changkeun Lee, Jiye Kang, Haeun Kim, Soomin Lim, Hyuk An, Jisu Jung, Seolyeon Moon</span><br>
+      <span class="paper-venue">Journal of the Korean Official Statistics, 30(4), pp 89–114, 2025</span><br>
+      <a href="https://doi.org/10.22886/jkos.2025.30.4.89" target="_blank" style="font-size:0.83rem;">doi:10.22886/jkos.2025.30.4.89</a>
+    </div>
+
+    <div class="paper">
+      <span class="paper-title">Does Total Factor Productivity Growth Reduce Energy Intensity? <em>(in Korean)</em></span><br>
+      <span class="paper-authors">with Changkeun Lee</span><br>
+      <span class="paper-venue">Korean Energy Economic Review, 24(1), pp 29–49, 2025</span><br>
+      <a href="https://doi.org/10.22794/keer.2025.24.1.002" target="_blank" style="font-size:0.83rem;">doi:10.22794/keer.2025.24.1.002</a>
+    </div>
+
+    <div class="paper">
+      <span class="paper-title">Analysis of Heterogeneous Changes in Travel Patterns by Special-Purpose Area in the COVID-19 Pandemic <em>(in Korean)</em></span><br>
+      <span class="paper-venue">Journal of Transport Research, 31(2), pp 19–31, 2024</span><br>
+      <a href="https://doi.org/10.34143/jtr.2024.31.2.19" target="_blank" style="font-size:0.83rem;">doi:10.34143/jtr.2024.31.2.19</a>
+    </div>
+
+    <div class="paper">
+      <span class="paper-title">The Effects of New Expressways on Local Economy <em>(in Korean)</em></span><br>
+      <span class="paper-venue">Journal of Korean Society of Transportation, 41(1), pp 68–80, 2023</span><br>
+      <a href="https://doi.org/10.7470/jkst.2023.41.1.068" target="_blank" style="font-size:0.83rem;">doi:10.7470/jkst.2023.41.1.068</a>
+    </div>
   </section>
 
   <!-- Experience -->
   <section id="experience">
     <h2>Experience</h2>
 
-    <h3>Research Experience</h3>
+    <h3 class="accent">Research Experience</h3>
 
+    
     <div class="entry">
       <span class="entry-date">Jan. 2025 – Present</span>
       <div class="entry-body">
@@ -475,7 +465,7 @@
       </div>
     </div>
 
-    <h3>Teaching Experience</h3>
+    <h3 class="accent">Teaching Experience</h3>
 
     <div class="entry">
       <span class="entry-date">Spring 2026</span>
@@ -525,7 +515,11 @@
       </div>
     </div>
 
-    <h3>Fellowships &amp; Awards</h3>
+  </section>
+
+  <!-- Fellowships & Awards -->
+  <section id="fellowships">
+    <h2>Fellowships &amp; Awards</h2>
 
     <div class="entry">
       <span class="entry-date">2026</span>
@@ -566,8 +560,11 @@
         <span>KDI School</span>
       </div>
     </div>
+  </section>
 
-    <h3>Presentations</h3>
+  <!-- Presentations -->
+  <section id="presentations">
+    <h2>Presentations</h2>
 
     <div class="entry">
       <span class="entry-date">2025</span>
@@ -615,18 +612,8 @@
       </ul>
       <ul>
         <li>Korean (Native)</li>
-        <li>English (Professional)</li>
+        <li>English (Fluent)</li>
       </ul>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="contact-block">
-      Email: <a href="mailto:sehoon@utk.edu">sehoon@utk.edu</a><br>
-      Phone: <a href="tel:+821099826876">+82 10-9982-6876</a><br>
-      Address: Department of Economics, University of Tennessee, Knoxville, TN 37996, USA
     </div>
   </section>
 
