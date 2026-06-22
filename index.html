@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sehoon Kim (김세훈) — Ph.D. student in Economics at the University of Tennessee, Knoxville. Research in environmental economics and labor economics." />
+  <title>Sehoon Kim (김세훈)</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      color: #333;
+      background: #fff;
+    }
+
+    a { color: #FF8200; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Nav ── */
+    .site-header {
+      border-top: 5px solid #FF8200;
+      border-bottom: 1px solid #e8e8e8;
+      padding: 0.75rem 0;
+      background: #fdfdfd;
+    }
+
+    .site-header-inner {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .site-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #424242;
+    }
+
+    .site-title:hover { text-decoration: none; color: #FF8200; }
+
+    .site-nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+
+    .site-nav a {
+      font-size: 0.875rem;
+      color: #424242;
+    }
+
+    .site-nav a:hover { color: #FF8200; text-decoration: none; }
+
+    /* ── Layout ── */
+    .page-content {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+    }
+
+    /* ── Profile ── */
+    .profile-block {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+    }
+
+    .profile-placeholder {
+      width: 150px;
+      min-width: 150px;
+      height: 200px;
+      background: #fff4ec;
+      border: 1px solid #ffd4a8;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      font-size: 0.78rem;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .profile-placeholder img {
+      width: 150px;
+      min-width: 150px;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .profile-text h1 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: #111;
+      margin-bottom: 0.2rem;
+      line-height: 1.25;
+    }
+
+    .citizenship {
+      font-size: 0.875rem;
+      color: #666;
+      margin-bottom: 0.85rem;
+    }
+
+    .profile-text p {
+      font-size: 0.975rem;
+      color: #333;
+      line-height: 1.75;
+    }
+
+    /* ── Sections ── */
+    section { margin-top: 2.25rem; }
+
+    h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #111;
+      border-bottom: 2px solid #FF8200;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1.1rem;
+    }
+
+    h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #555;
+      margin: 1.25rem 0 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Entry rows ── */
+    .entry {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 0 1.25rem;
+      margin-bottom: 0.9rem;
+      font-size: 0.94rem;
+    }
+
+    .entry-date {
+      color: #777;
+      font-size: 0.855rem;
+      padding-top: 0.05rem;
+    }
+
+    .entry-body strong { display: block; font-weight: 600; color: #222; }
+    .entry-body span   { color: #555; font-size: 0.875rem; }
+    .entry-body em     { font-style: italic; }
+
+    /* ── Papers ── */
+    .paper {
+      margin-bottom: 1.1rem;
+      font-size: 0.94rem;
+      line-height: 1.65;
+    }
+
+    .paper-title { font-weight: 600; color: #222; }
+
+    .paper-badge {
+      display: inline-block;
+      font-size: 0.72rem;
+      background: #fff4ec;
+      color: #cc5500;
+      border: 1px solid #ffd4a8;
+      padding: 0.05rem 0.45rem;
+      border-radius: 3px;
+      margin-left: 0.35rem;
+      font-weight: 500;
+      vertical-align: middle;
+    }
+
+    .paper-authors {
+      color: #666;
+      font-size: 0.875rem;
+      margin-top: 0.1rem;
+    }
+
+    .paper-venue {
+      color: #444;
+      font-size: 0.875rem;
+      font-style: italic;
+    }
+
+    details { margin-top: 0.35rem; }
+
+    details summary {
+      font-size: 0.835rem;
+      color: #FF8200;
+      cursor: pointer;
+      user-select: none;
+      list-style: none;
+    }
+
+    details summary::-webkit-details-marker { display: none; }
+    details summary::before { content: "▸ "; font-size: 0.75rem; }
+    details[open] summary::before { content: "▾ "; }
+
+    details summary:hover { text-decoration: underline; }
+
+    .abstract {
+      margin-top: 0.5rem;
+      padding: 0.75rem 1rem;
+      background: #fafafa;
+      border-left: 3px solid #FF8200;
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    /* ── Skills ── */
+    .skills-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 2rem;
+      font-size: 0.94rem;
+    }
+
+    .skills-wrap ul {
+      list-style: disc;
+      padding-left: 1.25rem;
+    }
+
+    .skills-wrap li { margin-bottom: 0.2rem; }
+
+    /* ── Contact ── */
+    .contact-block {
+      font-size: 0.95rem;
+      line-height: 2.1;
+    }
+
+    /* ── Footer ── */
+    .site-footer {
+      border-top: 1px solid #e8e8e8;
+      padding: 1.5rem 0;
+      text-align: center;
+      font-size: 0.78rem;
+      color: #999;
+      margin-top: 3rem;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 580px) {
+      .profile-block { flex-direction: column; }
+      .entry { grid-template-columns: 1fr; }
+      .entry-date { color: #999; font-size: 0.82rem; }
+      .skills-wrap { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-title" href="#">Sehoon Kim</a>
+    <nav class="site-nav">
+      <a href="#education">Education</a>
+      <a href="#research">Research</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page-content">
+
+  <!-- Profile -->
+  <div class="profile-block">
+    <div class="profile-placeholder">Photo<br>(profile.jpg)</div>
+    <div class="profile-text">
+      <h1>Sehoon Kim (김세훈)</h1>
+      <p class="citizenship">Citizenship: Republic of Korea</p>
+      <p>
+        I am an incoming Ph.D. student in Economics at the
+        <a href="https://haslam.utk.edu/economics/" target="_blank">University of Tennessee, Knoxville</a>.
+        My research interests are in applied microeconomics, with a focus on labor economics and
+        environmental economics. I study how carbon pricing and emissions trading schemes affect
+        firm behavior and regional labor markets, and examine selective ESG disclosure practices
+        among Korean listed firms. Before joining UTK, I completed an M.A. in Economics at
+        Sogang University and served as a teaching assistant and research assistant at
+        KDI School and Seoul National University.
+      </p>
+    </div>
+  </div>
+
+  <!-- Education -->
+  <section id="education">
+    <h2>Education</h2>
+
+    <div class="entry">
+      <span class="entry-date">2026 –</span>
+      <div class="entry-body">
+        <strong>University of Tennessee, Knoxville</strong>
+        <span>Ph.D. in Economics · Knoxville, TN, USA</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <span class="entry-date">2022</span>
+      <div class="entry-body">
+        <strong>Sogang University</strong>
+        <span>M.A. in Economics · Seoul, South Korea</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <span class="entry-date">2020</span>
+      <div class="entry-body">
+        <strong>Yonsei University, MIRAE</strong>
+        <span>B.A. in Economics · Wonju, South Korea</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Research -->
+  <section id="research">
+    <h2>Research</h2>
+
+    <!-- Publications -->
+    <h3>Peer-Reviewed Publications</h3>
+
+    <div class="paper">
+      <span class="paper-title">Work-from-Home in Korea: Expansion, Persistence, and Inequality</span><br>
+      <span class="paper-authors">with Changkeun Lee, Jiye Kang, Haeun Kim, Soomin Lim, Hyuk An, Jisu Jung, Seolyeon Moon</span><br>
+      <span class="paper-venue">Journal of the Korean Official Statistics, 30(4), pp 89–114, 2025</span><br>
+      <a href="https://doi.org/10.22886/jkos.2025.30.4.89" target="_blank" style="font-size:0.83rem;">doi:10.22886/jkos.2025.30.4.89</a>
+    </div>
+
+    <div class="paper">
+      <span class="paper-title">Does Total Factor Productivity Growth Reduce Energy Intensity? <em>(in Korean)</em></span><br>
+      <span class="paper-authors">with Changkeun Lee</span><br>
+      <span class="paper-venue">Korean Energy Economic Review, 24(1), pp 29–49, 2025</span><br>
+      <a href="https://doi.org/10.22794/keer.2025.24.1.002" target="_blank" style="font-size:0.83rem;">doi:10.22794/keer.2025.24.1.002</a>
+    </div>
+
+    <div class="paper">
+      <span class="paper-title">Analysis of Heterogeneous Changes in Travel Patterns by Special-Purpose Area in the COVID-19 Pandemic <em>(in Korean)</em></span><br>
+      <span class="paper-venue">Journal of Transport Research, 31(2), pp 19–31, 2024</span><br>
+      <a href="https://doi.org/10.34143/jtr.2024.31.2.19" target="_blank" style="font-size:0.83rem;">doi:10.34143/jtr.2024.31.2.19</a>
+    </div>
+
+    <div class="paper">
+      <span class="paper-title">The Effects of New Expressways on Local Economy <em>(in Korean)</em></span><br>
+      <span class="paper-venue">Journal of Korean Society of Transportation, 41(1), pp 68–80, 2023</span><br>
+      <a href="https://doi.org/10.7470/jkst.2023.41.1.068" target="_blank" style="font-size:0.83rem;">doi:10.7470/jkst.2023.41.1.068</a>
+    </div>
+
+    <!-- Working Papers -->
+    <h3>Working Papers</h3>
+
+    <div class="paper">
+      <span class="paper-title">
+        Leaving Someone Behind: Coal Phase-Out in South Korea
+        <span class="paper-badge">submitted</span>
+      </span><br>
+      <span class="paper-authors">with Yeong Jae Kim, Jinseong Park, Changkeun Lee, Sun Joo Park</span><br>
+      <a href="http://dx.doi.org/10.2139/ssrn.5195619" target="_blank" style="font-size:0.83rem;">SSRN 5195619</a>
+    </div>
+
+    <div class="paper">
+      <span class="paper-title">
+        Do ESG Scores Capture Future Climate Damages? A Firm-Level Carbon Burden of Korean Industries
+        <span class="paper-badge">submitted</span>
+      </span><br>
+      <span class="paper-authors">with Jiheum Yeon, Ju Hyun Pyun, Moonyoung Kim, Yeong Jae Kim</span>
+    </div>
+
+    <div class="paper">
+      <span class="paper-title">
+        What Explains High Fertility Rate in a New City? A Case Study of Sejong, South Korea
+        <span class="paper-badge">submitted</span>
+      </span><br>
+      <span class="paper-authors">with Changkeun Lee</span>
+    </div>
+
+    <div class="paper">
+      <span class="paper-title">Can Working from Home Pull Workers Out of the Megacity?: Evidence from a Stated-Choice Experiment in Korea's Seoul Capital Area</span><br>
+      <span class="paper-authors">with Changkeun Lee, Soomin Lim, Jiye Kang, Olivia Hye Kim</span>
+    </div>
+
+    <div class="paper">
+      <span class="paper-title">Can AI Substitute for Managerial Feedback in Remote Work? Evidence from a Randomized Experiment in Korea</span><br>
+      <span class="paper-authors">with Olivia Hye Kim, Changkeun Lee, Soomin Lim, Jiye Kang</span>
+    </div>
+
+    <div class="paper">
+      <span class="paper-title">The Effects of New Expressway Interchange on Manufacturing Productivity: Evidence from South Korea</span><br>
+      <span class="paper-authors">Awarded 2021 Research Proposal by KDI School</span>
+    </div>
+
+    <!-- Work in Progress -->
+    <h3>Work in Progress</h3>
+
+    <div class="paper">
+      <span class="paper-title">Firm-Establishment Matched Carbon Emissions Data in South Korea from 2013 to 2024</span><br>
+      <span class="paper-authors">with Jiheum Yeon, Ju Hyun Pyun, Moonyoung Kim, Yeong Jae Kim</span>
+    </div>
+
+    <div class="paper">
+      <span class="paper-title">Do Firms Shop for ESG Ratings? Evidence from Korea</span><br>
+      <span class="paper-authors">with Jiheum Yeon, Ju Hyun Pyun, Moonyoung Kim, Yeong Jae Kim</span>
+    </div>
+
+    <div class="paper">
+      <span class="paper-title">Changes in Good Job Distribution in South Korea</span><br>
+      <span class="paper-authors">with Changkeun Lee, Hyejin Lee</span>
+    </div>
+
+    <div class="paper">
+      <span class="paper-title">Sectoral Recomposition Without Aggregate Loss: Local Employment Effects of Nuclear Decommissioning</span><br>
+      <span class="paper-authors">with Jinseong Park, Yeong Jae Kim, Changkeun Lee, Jiye Kang, Soomin Lim</span>
+    </div>
+
+    <div class="paper">
+      <span class="paper-title">Does Technical Agility Reduce Technostress?</span><br>
+      <span class="paper-authors">with Changkeun Lee, Yongmi</span>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience">
+    <h2>Experience</h2>
+
+    <h3>Research Experience</h3>
+
+    <div class="entry">
+      <span class="entry-date">Jan. 2025 – Present</span>
+      <div class="entry-body">
+        <strong>Research Assistant for Yeong Jae Kim</strong>
+        <span>Seoul National University</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <span class="entry-date">Apr. 2024 – Present</span>
+      <div class="entry-body">
+        <strong>Research Assistant for Changkeun Lee</strong>
+        <span>Seoul National University</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <span class="entry-date">Mar. 2025 – Mar. 2026</span>
+      <div class="entry-body">
+        <strong>Research Assistant for Jinseong Park</strong>
+        <span>Inequality and Economic Policy Lab, KDI School</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <span class="entry-date">Feb. 2025 – Aug. 2025</span>
+      <div class="entry-body">
+        <strong>Research Intern</strong>
+        <span>Barun ICT Research Center, Yonsei University</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <span class="entry-date">Sep. 2020 – May. 2022</span>
+      <div class="entry-body">
+        <strong>Research Assistant for Changkeun Lee</strong>
+        <span>Seoul National University</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <span class="entry-date">May. 2021 – Dec. 2021</span>
+      <div class="entry-body">
+        <strong>Researcher</strong>
+        <span>Center for Future Vehicles, Korea Transport Institute</span>
+      </div>
+    </div>
+
+    <h3>Teaching Experience</h3>
+
+    <div class="entry">
+      <span class="entry-date">Spring 2026</span>
+      <div class="entry-body">
+        <strong>Teaching Assistant, Econometrics I (Graduate)</strong>
+        <span>KDI School of Public Policy and Management</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <span class="entry-date">Spring 2026</span>
+      <div class="entry-body">
+        <strong>Teaching Assistant, Analysis of Market and Public Policy (Graduate)</strong>
+        <span>KDI School of Public Policy and Management</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <span class="entry-date">Summer 2024</span>
+      <div class="entry-body">
+        <strong>Teaching Assistant, Microeconomics of Artificial Intelligence (Graduate)</strong>
+        <span>KDI School of Public Policy and Management</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <span class="entry-date">Spring 2024</span>
+      <div class="entry-body">
+        <strong>Teaching Assistant, Introduction to Development Policy (Graduate)</strong>
+        <span>KDI School of Public Policy and Management</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <span class="entry-date">Spring 2021</span>
+      <div class="entry-body">
+        <strong>Teaching Assistant, Principles of Economics (Undergraduate)</strong>
+        <span>Sogang University</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <span class="entry-date">Mar. 2020 – Feb. 2021</span>
+      <div class="entry-body">
+        <strong>Instructor, International Economics</strong>
+        <span>Dongwoo Girls' High School</span>
+      </div>
+    </div>
+
+    <h3>Fellowships &amp; Awards</h3>
+
+    <div class="entry">
+      <span class="entry-date">2026</span>
+      <div class="entry-body">
+        <strong>J. Fred and Wilma Holly Fellowship</strong>
+        <span>University of Tennessee, Knoxville</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <span class="entry-date">2022 – Present</span>
+      <div class="entry-body">
+        <strong>KDI School Scholarship of Academic Excellence</strong>
+        <span>KDI School</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <span class="entry-date">2017 – 2019</span>
+      <div class="entry-body">
+        <strong>Truth Scholarship (Academic Excellence)</strong>
+        <span>Yonsei University</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <span class="entry-date">2021</span>
+      <div class="entry-body">
+        <strong>Best Presentation Award (1st Place)</strong>
+        <span>Graduate Student Session, The 7th Workshop of RCSBE</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <span class="entry-date">2021</span>
+      <div class="entry-body">
+        <strong>KDI School Research Proposal Award</strong>
+        <span>KDI School</span>
+      </div>
+    </div>
+
+    <h3>Presentations</h3>
+
+    <div class="entry">
+      <span class="entry-date">2025</span>
+      <div class="entry-body">
+        <strong>KER International Conference</strong>
+        <span>Seoul National University</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <span class="entry-date">2025</span>
+      <div class="entry-body">
+        <strong>Korea's Allied Economic Associations Annual Meeting</strong>
+        <span>Presenter &amp; Discussant · Hanam University</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <span class="entry-date">2024</span>
+      <div class="entry-body">
+        <strong>Korea's Allied Economic Associations Annual Meeting</strong>
+        <span>Presenter · Seoul National University</span>
+      </div>
+    </div>
+
+    <div class="entry">
+      <span class="entry-date">2023</span>
+      <div class="entry-body">
+        <strong>Korea's Allied Economic Associations Annual Meeting</strong>
+        <span>Discussant · Korea University</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <h2>Skills &amp; Languages</h2>
+    <div class="skills-wrap">
+      <ul>
+        <li>Python (ML, Web Scraping, Text Mining)</li>
+        <li>Stata</li>
+        <li>R</li>
+        <li>QGIS</li>
+        <li>LaTeX</li>
+      </ul>
+      <ul>
+        <li>Korean (Native)</li>
+        <li>English (Professional)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact-block">
+      Email: <a href="mailto:sehoon@utk.edu">sehoon@utk.edu</a><br>
+      Phone: <a href="tel:+821099826876">+82 10-9982-6876</a><br>
+      Address: Department of Economics, University of Tennessee, Knoxville, TN 37996, USA
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  © 2026 Sehoon Kim (김세훈) · Built with GitHub Pages
+</footer>
+
+</body>
+</html>
